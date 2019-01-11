@@ -36,7 +36,7 @@ class RegisterViewController: UIViewController {
                             ]as [String : Any]
                         databaseRef.setValue(userObject, withCompletionBlock: { (error, Ref) in
                             if error == nil {
-                    self.navigationController?.popViewController(animated: true)
+//                    self.navigationController?.popViewController(animated: true)
                             }
                         })
                     }

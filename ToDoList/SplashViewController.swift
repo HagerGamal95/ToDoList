@@ -12,48 +12,61 @@ import FirebaseAuth
 
 class SplashViewController: UIViewController {
     
+    var dispatchGroup: DispatchGroup?
+    
     var timer: Timer?
     
-    var authFinished = false
-    var timeFinished = false
-    let dispatchGroup = DispatchGroup()
+    var authListener: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dispatchGroup = DispatchGroup()
         
+        dispatchGroup?.enter()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timeElapsed), userInfo: nil, repeats: false)
         
-        authenticationUser()
+        dispatchGroup?.enter()
+        authenticationUser { (user) in
+            UserService.currentUserProfile = user
+            if let dispatchGroup = self.dispatchGroup {
+                dispatchGroup.leave()
+            } else {
+                self.navigateToApp()
+            }
+        }
+        
+        dispatchGroup?.notify(queue: .main) {
+            self.navigateToApp()
+            self.dispatchGroup = nil
+        }
     }
     
-    func authenticationUser() {
-        Auth.auth().addStateDidChangeListener { (auth, user) in
+    func authenticationUser(authCompletion: @escaping (User?) -> ()) {
+        authListener = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
                 UserService.observeUserProfile(user!.uid, completion: { (user) in
-                    UserService.currentUserProfile = user
-                    self.authFinished = true
-                    self.checkTasks()
+                    authCompletion(user)
                 })
             } else {
-                self.authFinished = true
-                self.checkTasks()
+                authCompletion(nil)
             }
+            
+            // Auth.auth().removeStateDidChangeListener(self.authListener!)
         }
     }
     
     @objc func timeElapsed() {
-        timeFinished = true
-        self.checkTasks()
+        dispatchGroup?.leave()
     }
     
-    func checkTasks(){
-        if authFinished && timeFinished {
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let controllerIdentifier = UserService.currentUserProfile != nil ? "MainNavigationController" : "loginNavigationController"
-            let controller = storyBoard.instantiateViewController(withIdentifier: controllerIdentifier)
-            UIApplication.shared.delegate?.window??.rootViewController = controller
-            UIApplication.shared.delegate?.window??.makeKeyAndVisible()
-        }
+    func navigateToApp(){
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let controllerIdentifier = UserService.currentUserProfile != nil ? "MainNavigationController" : "loginNavigationController"
+        let controller = storyBoard.instantiateViewController(withIdentifier: controllerIdentifier)
+        UIApplication.shared.delegate?.window??.rootViewController = controller
+        UIApplication.shared.delegate?.window??.makeKeyAndVisible()
+        
+        self.dispatchGroup = nil
     }
     
 }
