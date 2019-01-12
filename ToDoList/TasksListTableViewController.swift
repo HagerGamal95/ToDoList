@@ -12,12 +12,13 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class TasksListTableViewController: UITableViewController {
-
+    
     @IBOutlet weak var textFieldWelcomeUser: UILabel!
     let listToUsers = "ListToTasks"
     var ref: DatabaseReference!
     var currentUser : User?
     var userCountBarButtonItem: UIBarButtonItem!
+    var haveTasks = false
     var tasks = [Task]()
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -39,17 +40,10 @@ class TasksListTableViewController: UITableViewController {
         }
         tableView.reloadData()
         observePosts()
-
+        
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-   
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     func observePosts()
     {
         let uid = Auth.auth().currentUser?.uid
@@ -60,10 +54,10 @@ class TasksListTableViewController: UITableViewController {
                 if let childSnapshot = child as? DataSnapshot,
                     let dict = childSnapshot.value as? [String:Any],
                     let taskId = dict["id"] as? String,
-                let taskName = dict["taskName"] as? String,
-                let taskDes = dict["taskDescription"] as? String ,
-                let photoURL = dict["taskPhotoUrl"] as? String,
-                let url = URL(string:photoURL){
+                    let taskName = dict["taskName"] as? String,
+                    let taskDes = dict["taskDescription"] as? String ,
+                    let photoURL = dict["taskPhotoUrl"] as? String,
+                    let url = URL(string:photoURL){
                     let task = Task(id: taskId, taskName: taskName, taskDescription: taskDes, photoUrl: url)
                     tempTasks.append(task)
                 }
@@ -80,11 +74,19 @@ class TasksListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-//        return tasks.count
+        if tasks.count == 0 && !haveTasks
+        {
+            let alert = UIAlertController(title: "welcome 🙋🏻‍♀️", message: "there is no tasks you can add tasks from the top right button ☝🏻", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            haveTasks = true
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
         return tasks.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
@@ -94,12 +96,12 @@ class TasksListTableViewController: UITableViewController {
         return cell
     }
     
-
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let task = tasks[indexPath.row]
@@ -122,16 +124,16 @@ class TasksListTableViewController: UITableViewController {
         }
     }
     @IBAction func addButtonDidTouch(_ sender: Any) {
-        }
-        
+    }
+    
     @objc func logOutDidTouch() {
         do{
-          try Auth.auth().signOut()
+            try Auth.auth().signOut()
         }
         catch
         {
             print("can not sigh out")
         }
     }
-  
+    
 }

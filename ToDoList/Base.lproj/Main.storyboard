@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TaskIcon" translatesAutoresizingMaskIntoConstraints="NO" id="trZ-EB-VBf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIconLogo" translatesAutoresizingMaskIntoConstraints="NO" id="trZ-EB-VBf">
                                 <rect key="frame" x="20" y="60" width="335" height="335"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="trZ-EB-VBf" secondAttribute="height" multiplier="1:1" id="QfK-31-NA4"/>
@@ -29,7 +29,7 @@
                                 <rect key="frame" x="169" y="435" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.32156862745098042" green="0.64313725490196083" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="trZ-EB-VBf" firstAttribute="leading" secondItem="PD3-M5-K1f" secondAttribute="leading" constant="20" id="5rh-YL-x1J"/>
                             <constraint firstItem="jzW-nc-XM6" firstAttribute="top" secondItem="trZ-EB-VBf" secondAttribute="bottom" constant="40" id="UhV-Nt-pGa"/>
@@ -105,7 +105,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6c-Fb-Tfy">
                                 <rect key="frame" x="54" y="379" width="267" height="38"/>
-                                <color key="backgroundColor" red="0.99160850050000005" green="0.58425903320000006" blue="0.42443481090000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.85098039215686272" green="0.81960784313725488" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="HHP-GG-RWe"/>
                                 </constraints>
@@ -189,7 +189,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxh-I5-lbv">
                                 <rect key="frame" x="54" y="407.5" width="267" height="38"/>
-                                <color key="backgroundColor" red="0.98431372549019602" green="0.58431372549019611" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.85098039215686272" green="0.81960784313725488" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="z4Z-wB-47R"/>
                                 </constraints>
@@ -259,7 +259,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jic-qw-g3T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.69146675529691493" green="0.88050638561262073" blue="0.75500596476974358" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.85098039215686272" green="0.81960784313725488" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="dS7-uJ-bLK">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -267,7 +267,7 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gez-mV-9le">
                                     <rect key="frame" x="16" y="16" width="343" height="12"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -313,6 +313,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="ToDoList" id="0Op-Sc-mU1">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="t42-Wf-iB9">
+                            <color key="tintColor" red="0.98039215686274506" green="0.93725490196078431" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addButtonDidTouch:" destination="Yrz-LE-2an" id="Ofh-tm-s1f"/>
                                 <segue destination="bGH-9c-7fJ" kind="show" id="d6F-UH-koH"/>
@@ -399,7 +400,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taskImage" translatesAutoresizingMaskIntoConstraints="NO" id="iPf-M4-RTu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TaskIcon" translatesAutoresizingMaskIntoConstraints="NO" id="iPf-M4-RTu">
                                 <rect key="frame" x="155.5" y="141" width="64" height="64"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -430,7 +431,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.78823529411764703" green="0.85098039215686272" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.85098039215686272" green="0.82745098039215681" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iPf-M4-RTu" firstAttribute="centerX" secondItem="O15-nS-Xfa" secondAttribute="centerX" id="3qh-mM-HGo"/>
                             <constraint firstItem="Iqw-v6-a0z" firstAttribute="leading" secondItem="r0l-Pp-2p9" secondAttribute="leading" id="776-1Y-5dG"/>
@@ -450,6 +451,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ArT-Ib-iec">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="GgI-WG-DjH">
+                            <color key="tintColor" red="0.98039215686274506" green="0.93725490196078431" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="handleCancelButton" destination="1Mg-mW-BPP" id="cgB-8D-Pmx"/>
                             </connections>
@@ -479,6 +481,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fLR-3D-7RX">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.98039215686274506" green="0.93725490196078431" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.30588235294117649" green="0.6470588235294118" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
@@ -499,9 +502,10 @@
             <objects>
                 <navigationController storyboardIdentifier="loginNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LsN-rm-zJE" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R4W-dt-7jL">
+                    <navigationBar key="navigationBar" alpha="0.0" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R4W-dt-7jL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.32156862745098042" green="0.64313725490196083" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -520,6 +524,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YUC-vu-rfd">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.98039215686274506" green="0.93725490196078431" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.40784313725490196" green="0.68235294117647061" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -533,7 +538,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TaskIcon" width="50" height="50"/>
-        <image name="taskImage" width="2000" height="2000"/>
+        <image name="AppIconLogo" width="1024" height="1024"/>
+        <image name="TaskIcon" width="512" height="512"/>
     </resources>
 </document>

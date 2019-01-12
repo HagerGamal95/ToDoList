@@ -19,33 +19,26 @@ class NewTaskViewController: UIViewController , UITextViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldTaskDescription.delegate = self
-        // Do any additional setup after loading the view.
         let imageTap = UITapGestureRecognizer(target: self, action: #selector(openImagePicker))
+        
         taskImage.isUserInteractionEnabled = true
         taskImage.addGestureRecognizer(imageTap)
         taskImage.layer.cornerRadius = taskImage.bounds.height / 2
         taskImage.clipsToBounds = true
-        //tapToChangeProfileButton.addTarget(self, action: #selector(openImagePicker), for: .touchUpInside)
         
         imageBicker = UIImagePickerController()
         imageBicker.allowsEditing = true
         imageBicker.sourceType = .photoLibrary
         imageBicker.delegate = self
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     @IBAction func handleCancelButton() {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func handleSaveAction(_ sender: Any) {
-            // 1. Upload the profile image to Firebase Storage
-      
+        // 1. Upload the profile image to Firebase Storage
+        
         if (!(textFieldTaskName.text!.isEmpty)  && (textFieldTaskDescription.text != "" )){
             self.uploadProfileImage(taskImage.image!) { url in
                 if url != nil {
@@ -62,8 +55,8 @@ class NewTaskViewController: UIViewController , UITextViewDelegate{
         {
             errorOccured(title: "Error", message: "somthing is missing please fill all inputs")
         }
-                
-            }
+        
+    }
     func errorOccured(title : String , message : String)
     {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -77,11 +70,11 @@ class NewTaskViewController: UIViewController , UITextViewDelegate{
         // Open Image Picker
         self.present(imageBicker, animated: true, completion: nil)
     }
-
+    
     func textViewDidChange(_ textView: UITextView) {
         placeHolderLabel.isHidden = !textFieldTaskDescription.text.isEmpty
     }
-
+    
 }
 extension NewTaskViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -99,18 +92,18 @@ extension NewTaskViewController : UIImagePickerControllerDelegate, UINavigationC
     }
     
     func saveTask(taskName:String,taskDes: String ,TaskImageURL:URL, completion: @escaping ((_ success:Bool)->())) {
-  
-                        guard let uid = Auth.auth().currentUser?.uid else{return}
-            let postRef = Database.database().reference().child("tasks/\(uid)").childByAutoId()
-                        let postObject = [
-                            "id" : postRef.key! ,
-                            "taskName" : taskName ,
-                            "taskDescription" : taskDes ,
-                            "taskPhotoUrl" : TaskImageURL.absoluteString
-                        ] as [String:Any]
-            postRef.setValue(postObject) { (error, ref) in
-                completion(error == nil)
-            }
+        
+        guard let uid = Auth.auth().currentUser?.uid else{return}
+        let postRef = Database.database().reference().child("tasks/\(uid)").childByAutoId()
+        let postObject = [
+            "id" : postRef.key! ,
+            "taskName" : taskName ,
+            "taskDescription" : taskDes ,
+            "taskPhotoUrl" : TaskImageURL.absoluteString
+            ] as [String:Any]
+        postRef.setValue(postObject) { (error, ref) in
+            completion(error == nil)
+        }
         
     }
     func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:URL?)->())) {
@@ -128,12 +121,12 @@ extension NewTaskViewController : UIImagePickerControllerDelegate, UINavigationC
                 storageRef.downloadURL(completion: { (url, error) in
                     completion(url)
                 })
-           
+                
             } else {
                 // failed
                 completion(nil)
             }
         }
     }
-
+    
 }
