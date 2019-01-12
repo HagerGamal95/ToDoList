@@ -51,7 +51,7 @@ class RegisterViewController: UIViewController {
         }
         else
         {
-            let alert = UIAlertController(title: "Error", message: "please write poth email && password", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: "please write both email && password", preferredStyle: .alert)
             
             let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alert.addAction(okAction)
