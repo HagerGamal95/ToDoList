@@ -18,6 +18,8 @@ class TaskDetailsViewController: UIViewController {
         super.viewDidLoad()
         textFieldTaskName.text = selectedTask.taskName
         textFieldTaskDescription.text = selectedTask.taskDescription
+        taskImage.layer.cornerRadius = taskImage.frame.size.width/2
+        taskImage.clipsToBounds = true
         ImageService.getImage(withURL: selectedTask.photoUrl) { image, url in
             guard let _task = self.selectedTask else { return }
             if _task.photoUrl.absoluteString == url.absoluteString {

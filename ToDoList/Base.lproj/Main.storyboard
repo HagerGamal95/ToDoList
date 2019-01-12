@@ -27,6 +27,7 @@
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jzW-nc-XM6">
                                 <rect key="frame" x="169" y="435" width="37" height="37"/>
+                                <color key="color" red="0.85098039215686272" green="0.81960784313725488" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.32156862745098042" green="0.64313725490196083" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -339,6 +340,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fU8-Nf-6SA">
                                 <rect key="frame" x="123" y="100" width="130" height="130"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="971-OI-8FT"/>
                                     <constraint firstAttribute="height" constant="130" id="KhW-kX-axF"/>
@@ -363,7 +365,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.85098039215686272" green="0.81960784313725488" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LVE-8k-MVT" firstAttribute="leading" secondItem="Hwe-jD-UZv" secondAttribute="leading" constant="20" id="D60-WP-DPG"/>
                             <constraint firstItem="wtA-Rk-1ba" firstAttribute="leading" secondItem="Hwe-jD-UZv" secondAttribute="leading" constant="20" id="Kkt-kW-rfQ"/>
@@ -464,6 +466,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="placeHolderLabel" destination="Iqw-v6-a0z" id="HV3-8i-D1L"/>
+                        <outlet property="saveTaskButton" destination="o5z-tL-Rs3" id="KhZ-n6-LYD"/>
                         <outlet property="taskImage" destination="iPf-M4-RTu" id="dCo-sC-cby"/>
                         <outlet property="textFieldTaskDescription" destination="r0l-Pp-2p9" id="XgX-DD-NQa"/>
                         <outlet property="textFieldTaskName" destination="PgA-pE-6Ec" id="Ta0-Qq-Ff6"/>

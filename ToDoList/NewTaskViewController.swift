@@ -16,6 +16,8 @@ class NewTaskViewController: UIViewController , UITextViewDelegate{
     @IBOutlet weak var textFieldTaskDescription: UITextView!
     @IBOutlet weak var textFieldTaskName: UITextField!
     @IBOutlet weak var taskImage: UIImageView!
+    @IBOutlet weak var saveTaskButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldTaskDescription.delegate = self
@@ -40,14 +42,22 @@ class NewTaskViewController: UIViewController , UITextViewDelegate{
         // 1. Upload the profile image to Firebase Storage
         
         if (!(textFieldTaskName.text!.isEmpty)  && (textFieldTaskDescription.text != "" )){
+            saveTaskButton.isEnabled = false
             self.uploadProfileImage(taskImage.image!) { url in
                 if url != nil {
                     self.saveTask(taskName: self.textFieldTaskName.text!, taskDes: self.textFieldTaskDescription.text, TaskImageURL: url!, completion: { (success) in
-                        self.dismiss(animated: true, completion: nil)
+                        if success {
+                            self.saveTaskButton.isEnabled = true
+                            self.dismiss(animated: true, completion: nil)
+                        }else
+                        {
+                            self.saveTaskButton.isEnabled = true
+                            self.errorOccured(title: "Error", message: "you are offline")
+                        }
                     })
                 }
                 else {
-                    self.errorOccured(title: "Error", message: "you are offline")
+                    self.saveTaskButton.isEnabled = true
                 }
             }
         }

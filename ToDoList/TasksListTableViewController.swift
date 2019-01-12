@@ -63,10 +63,24 @@ class TasksListTableViewController: UITableViewController {
                 }
             }
             self.tasks = tempTasks
+            
+            self.checkUserEligibilityToZeroTasksPopUp()
+            
             self.tableView.reloadData()
         }
     }
-    
+    func checkUserEligibilityToZeroTasksPopUp(){
+        if self.tasks.count == 0 && !self.haveTasks
+        {
+            let alert = UIAlertController(title: "welcome 🙋🏻‍♀️", message: "there is no tasks you can add tasks from the top right button ☝🏻", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            self.haveTasks = true
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,16 +88,6 @@ class TasksListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tasks.count == 0 && !haveTasks
-        {
-            let alert = UIAlertController(title: "welcome 🙋🏻‍♀️", message: "there is no tasks you can add tasks from the top right button ☝🏻", preferredStyle: .alert)
-            
-            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            haveTasks = true
-            alert.addAction(okAction)
-            
-            self.present(alert, animated: true, completion: nil)
-        }
         return tasks.count
     }
     
@@ -108,6 +112,7 @@ class TasksListTableViewController: UITableViewController {
             let uid = Auth.auth().currentUser?.uid
             let taskRef = Database.database().reference().child("tasks/\(uid!)/\(task.id)")
             taskRef.removeValue()
+            self.haveTasks = true
             tableView.reloadData()
         }
     }
