@@ -122,7 +122,7 @@
                   moduleName = "ToDoList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/test/ToDoList/ToDoList/SplashViewController.swift"
-                  timestampString = "568948972.08297"
+                  timestampString = "570038651.884174"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "47"
@@ -137,7 +137,7 @@
                   moduleName = "ToDoList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/test/ToDoList/ToDoList/SplashViewController.swift"
-                  timestampString = "568948972.0851769"
+                  timestampString = "570038651.886816"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
@@ -234,7 +234,7 @@
                   moduleName = "ToDoList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/test/ToDoList/ToDoList/UserService.swift"
-                  timestampString = "568948972.1131051"
+                  timestampString = "570038651.9148149"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
@@ -249,7 +249,7 @@
                   moduleName = "ToDoList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/test/ToDoList/ToDoList/UserService.swift"
-                  timestampString = "568948972.115145"
+                  timestampString = "570038651.917304"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
@@ -257,6 +257,38 @@
                   offsetFromSymbolStart = "33">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/LocalizationSystem.swift"
+            timestampString = "570040461.8352"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "localizedStringForKey(key:comment:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/LocalizationSystem.swift"
+            timestampString = "570040461.835551"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "localizedStringForKey(key:comment:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

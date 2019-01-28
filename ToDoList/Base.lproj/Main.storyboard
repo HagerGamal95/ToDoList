@@ -384,6 +384,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hwe-jD-UZv"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="rue-Rt-Imz">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="organize" id="HLe-er-ZQZ">
+                            <connections>
+                                <segue destination="bc0-GB-SHx" kind="show" id="CL4-TF-hT4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="taskImage" destination="fU8-Nf-6SA" id="L3z-Q5-D3F"/>
                         <outlet property="textFieldTaskDescription" destination="wtA-Rk-1ba" id="ec1-C8-TxC"/>
@@ -393,6 +402,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tti-Kk-j5B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2938" y="2356"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cdM-LC-PXy">
+            <objects>
+                <viewController storyboardIdentifier="vc" id="bc0-GB-SHx" customClass="ViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hhy-BQ-SVI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0E-3o-rYL">
+                                <rect key="frame" x="20" y="84" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxa-nF-fiN">
+                                <rect key="frame" x="20" y="125" width="335" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2T5-2G-kdZ">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="changeLanguage:" destination="bc0-GB-SHx" eventType="touchUpInside" id="PCR-IT-mn0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2T5-2G-kdZ" firstAttribute="centerY" secondItem="hhy-BQ-SVI" secondAttribute="centerY" id="JUN-e1-Zde"/>
+                            <constraint firstItem="uUm-MN-U0c" firstAttribute="trailing" secondItem="nxa-nF-fiN" secondAttribute="trailing" constant="20" id="SwM-SP-XVY"/>
+                            <constraint firstItem="z0E-3o-rYL" firstAttribute="top" secondItem="uUm-MN-U0c" secondAttribute="top" constant="20" id="WTW-Cr-TUO"/>
+                            <constraint firstItem="uUm-MN-U0c" firstAttribute="trailing" secondItem="z0E-3o-rYL" secondAttribute="trailing" constant="20" id="YgQ-RG-RXb"/>
+                            <constraint firstItem="z0E-3o-rYL" firstAttribute="leading" secondItem="uUm-MN-U0c" secondAttribute="leading" constant="20" id="dmo-el-Rwx"/>
+                            <constraint firstItem="nxa-nF-fiN" firstAttribute="top" secondItem="z0E-3o-rYL" secondAttribute="bottom" constant="20" id="jr0-Qx-SBM"/>
+                            <constraint firstItem="nxa-nF-fiN" firstAttribute="leading" secondItem="uUm-MN-U0c" secondAttribute="leading" constant="20" id="pDK-gD-SGF"/>
+                            <constraint firstItem="2T5-2G-kdZ" firstAttribute="centerX" secondItem="hhy-BQ-SVI" secondAttribute="centerX" id="x4L-w7-MjG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uUm-MN-U0c"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnChangeLanguage" destination="2T5-2G-kdZ" id="o6k-GA-ywY"/>
+                        <outlet property="lblCurrentLanguage" destination="nxa-nF-fiN" id="11Q-KF-IE5"/>
+                        <outlet property="lblHeader" destination="z0E-3o-rYL" id="9zz-N4-STz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="izU-am-4uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2937" y="3055"/>
         </scene>
         <!--New Task View Controller-->
         <scene sceneID="Ck3-Cc-d1T">

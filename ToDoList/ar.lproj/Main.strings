@@ -1,0 +1,57 @@
+
+/* Class = "UINavigationItem"; title = "ToDoList"; ObjectID = "0Op-Sc-mU1"; */
+"0Op-Sc-mU1.title" = "ToDoList";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "6Zx-4P-e5j"; */
+"6Zx-4P-e5j.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "Bxh-I5-lbv"; */
+"Bxh-I5-lbv.normalTitle" = "Sign up";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "D2s-oe-nVb"; */
+"D2s-oe-nVb.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Gez-mV-9le"; */
+"Gez-mV-9le.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "IHS-c8-S6c"; */
+"IHS-c8-S6c.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "write task description"; ObjectID = "Iqw-v6-a0z"; */
+"Iqw-v6-a0z.text" = "write task description";
+
+/* Class = "UILabel"; text = "Task Name :"; ObjectID = "LVE-8k-MVT"; */
+"LVE-8k-MVT.text" = "Task Name :";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "Njo-cq-y7B"; */
+"Njo-cq-y7B.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "userName"; ObjectID = "PgA-pE-6Ec"; */
+"PgA-pE-6Ec.placeholder" = "userName";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VfI-az-a09"; */
+"VfI-az-a09.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "userName"; ObjectID = "YsQ-rM-LTa"; */
+"YsQ-rM-LTa.placeholder" = "userName";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "b6c-Fb-Tfy"; */
+"b6c-Fb-Tfy.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "ToDo"; ObjectID = "esv-or-DN8"; */
+"esv-or-DN8.text" = "ToDo";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "kL2-FF-N1R"; */
+"kL2-FF-N1R.text" = "Title";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "oiS-gY-oSd"; */
+"oiS-gY-oSd.text" = "Subtitle";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "qry-is-1Ke"; */
+"qry-is-1Ke.normalTitle" = "Sign up";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wtA-Rk-1ba"; */
+"wtA-Rk-1ba.text" = "Label";
+
+/* Class = "UILabel"; text = "SignUp"; ObjectID = "xhF-V3-Wsc"; */
+"xhF-V3-Wsc.text" = "SignUp";

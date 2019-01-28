@@ -1,0 +1,9 @@
+/* 
+  localizable.strings
+  ToDoList
+
+  Created by hager on 1/24/19.
+  Copyright © 2019 Vodafone. All rights reserved.
+*/
+"header_text" = "Current Language";
+"change_language" = "Change Language";
